@@ -1,3 +1,3 @@
-# portfolio_new
+# joshminton.net
 
 My portfolio.
