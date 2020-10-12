@@ -105,7 +105,9 @@ $(document).ready(function() {
             var offT = $(this).offset().top;
             if((offT-scrollPos) <= halfWay) {
                 $('.selected').removeClass('selected')
+                $('.inView').removeClass('inView')
                 $('.sidebar div').eq(i).addClass('selected')
+                $('.section').eq(i).addClass('inView')
                 // notSet = false;
             }
         })

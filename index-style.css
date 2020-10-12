@@ -151,6 +151,19 @@ header {
     text-align: center;
 }
 
+.section {
+    opacity: 0.1;
+    transition: opacity 0.2s;
+}
+
+.section:hover {
+    opacity: 1;
+}
+
+.inView {
+    opacity: 1;
+}
+
 #film {
     margin-bottom: 4em;
 }
@@ -246,6 +259,11 @@ iframe {
 
 .item p{
     font-size: 14pt;
+}
+
+footer {
+    padding-bottom: 2em;
+    text-align: center;
 }
 
 
