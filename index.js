@@ -97,7 +97,8 @@ function getContentfulAssetURL(data, id){
 
 
 $(document).ready(function() {
-    $(window).scroll(function() {
+
+    function setActiveSection() {
         var halfWay = $(window).height() / 2;
         var scrollPos = $(window).scrollTop();
         // var notSet = true;
@@ -114,5 +115,9 @@ $(document).ready(function() {
         // if(notSet){
         //     $('.selected').removeClass('selected')
         // }
+    }
+    $(window).scroll(function() {
+        setActiveSection();
     });
+    setActiveSection();
 });
