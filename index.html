@@ -12,7 +12,7 @@
 	</head>
 	<body class = "margin full">
 
-		<header>
+		<header class="section" id="about">
             <h1>Josh Minton</h1>
             <p>Hello there! I'm a <span id="age">23</span> year old developer, designer, and filmmaker.
                 I love the intricacies of technology, but also care about creating things that are useful and usable.
@@ -28,12 +28,22 @@
 		</header>
 
         <div class="sidebar">
-            <div class="sidebarItem selected">
-                <p>code</p>
-            </div>
-            <div class="sidebarItem">
-                <p>films</p>
-            </div>
+            <a href=#intro>
+                <div class="sidebarItem selected">
+                    <p>intro</p>
+                </div>
+            </a>
+            <br>
+            <a href=#code>
+                <div class="sidebarItem">
+                    <p>code</p>
+                </div>
+            </a>
+            <a href=#film>
+                <div class="sidebarItem">
+                    <p>films</p>
+                </div>
+            </a>
             <!-- <div class="sidebarItem">
                 <p>design</p>
             </div>
@@ -42,7 +52,7 @@
             </div> -->
         </div>
 
-        <div class="code section">
+        <div id="code" class="section">
             <a href="https://github.com/joshminton/saginaw">
                 <div class="item">
                     <div class="description">
@@ -64,7 +74,7 @@
             </a>
         </div>
 
-        <div class="film section">
+        <div id="film" class="section">
             <div class="item">
                 <div class="description">
                     <h2>'Known'</h2>

@@ -100,12 +100,17 @@ $(document).ready(function() {
     $(window).scroll(function() {
         var halfWay = $(window).height() / 2;
         var scrollPos = $(window).scrollTop();
+        // var notSet = true;
         $('.section').each(function(i){
             var offT = $(this).offset().top;
             if((offT-scrollPos) <= halfWay) {
                 $('.selected').removeClass('selected')
                 $('.sidebar div').eq(i).addClass('selected')
+                // notSet = false;
             }
         })
+        // if(notSet){
+        //     $('.selected').removeClass('selected')
+        // }
     });
 });
