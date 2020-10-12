@@ -156,6 +156,10 @@ a[href], input[type='submit'], input[type='image'], label[for], select, button, 
     .section {
         margin-bottom: 4em;
     }
+
+    .section {
+        transition: opacity 0.2s;
+    }
 }
 
 h1 {
@@ -222,7 +226,6 @@ a, u {
 
 .section {
     opacity: 0.1;
-    transition: opacity 0.2s;
 }
 
 .section:hover {
