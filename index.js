@@ -99,25 +99,31 @@ function getContentfulAssetURL(data, id){
 $(document).ready(function() {
 
     function setActiveSection() {
-        var halfWay = $(window).height() / 2;
-        var scrollPos = $(window).scrollTop();
-        // var notSet = true;
-        $('.section').each(function(i){
-            var offT = $(this).offset().top;
-            if((offT-scrollPos) <= halfWay) {
-                $('.selected').removeClass('selected')
-                $('.inView').removeClass('inView')
-                $('.sidebar div').eq(i).addClass('selected')
-                $('.section').eq(i).addClass('inView')
-                // notSet = false;
-            }
-        })
-        // if(notSet){
-        //     $('.selected').removeClass('selected')
-        // }
+        console.log($(window).width())
+        if($(window).width() > 576){
+            var halfWay = $(window).height() / 2;
+            var scrollPos = $(window).scrollTop();
+            // var notSet = true;
+            $('.section').each(function(i){
+                var offT = $(this).offset().top;
+                if((offT-scrollPos) <= halfWay) {
+                    $('.selected').removeClass('selected')
+                    $('.inView').removeClass('inView')
+                    $('.sidebar div').eq(i).addClass('selected')
+                    $('.section').eq(i).addClass('inView')
+                    // notSet = false;
+                }
+            })
+            // if(notSet){
+            //     $('.selected').removeClass('selected')
+            // }
+        } else {
+            $('.section').addClass('inView')
+        }
     }
     $(window).scroll(function() {
         setActiveSection();
     });
+
     setActiveSection();
 });

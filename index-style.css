@@ -117,9 +117,97 @@ a[href], input[type='submit'], input[type='image'], label[for], select, button, 
     .sidebar {
         display: none;
     }
+
+    .avatarWrapper {
+        width: 20%;
+        right: 0em;
+        bottom: 0em;
+    }
+
+    .avatar {
+        width: 100%;
+    }
 }
 
 @media (min-width: 576px) {
+    .bio {
+        max-width: 500px;
+    }
+    .avatar {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 1220px) {
+    .margin {
+        margin-left: 14%;
+        margin-right: 14%;
+    }
+
+    h1 {
+        font-size: 5em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    p {
+        font-size: 16pt;
+    }
+
+    .item p{
+        font-size: 14pt;
+    }
+
+    #code .item {
+        padding: 1.5em;
+    }
+
+    #film .item .description {
+        padding: 2em;
+    }
+
+    .full {
+        margin-top: 3em;
+    }
+
+    .sidebar {
+        left: 3.5%;
+    }
+
+    .section {
+        margin-bottom: 4em;
+    }
+
+    .section {
+        transition: opacity 0.2s;
+    }
+
+    .avatarWrapper {
+        bottom: 0em;
+        right: 0em;
+    }
+
+    header {
+        display: block;
+    }
+
+}
+
+@media (max-width: 1000px) {
+    header {
+        display: block;
+    }
+
+    .avatarWrapper {
+        position: absolute;
+        margin: 0 0 0 0px;
+    }
+}
+
+@media (min-width: 1220px) {
     .margin {
         margin-left: 22%;
         margin-right: 22%;
@@ -153,12 +241,20 @@ a[href], input[type='submit'], input[type='image'], label[for], select, button, 
         margin-top: 3em;
     }
 
+    .sidebar {
+        left: 7%;
+    }
+
     .section {
         margin-bottom: 4em;
     }
 
     .section {
         transition: opacity 0.2s;
+    }
+
+    .bio {
+        max-width: 500px;
     }
 }
 
@@ -205,7 +301,6 @@ a, u {
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
-    left: 7%;
     width: auto;
 }
 
@@ -213,6 +308,26 @@ a, u {
     padding: 0.5em;
     margin: 0.2em;
     border-radius: 10em;
+}
+
+header {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.avatarWrapper {
+    max-width: 500px;
+}
+
+.avatar {
+    border-radius: 12px;
+    opacity: 90%;
+    vertical-align: text-bottom;
+    max-width: 250px;
+    /* margin-bottom: 3em; */
+    /* float: right; */
 }
 
 .selected {
