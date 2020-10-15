@@ -56,6 +56,7 @@ table {
     --itemColour:#F7F7F7;
     --selectedColour:#FFFFFF;
     --textColour:#535353;
+    --fadedTextColour:#FDFDFD;
 }
 
 [data-theme="light"] {
@@ -63,6 +64,7 @@ table {
     --itemColour:#F7F7F7;
     --selectedColour:#FFFFFF;
     --textColour:#535353;
+    --fadedTextColour:#B9B8B8;
 }
 
 [data-theme="dark"] {
@@ -70,6 +72,7 @@ table {
     --itemColour:#393939;
     --selectedColour:#585858;
     --textColour:#FDFDFD;
+    --fadedTextColour:#585858;
 }
 
 a[href], input[type='submit'], input[type='image'], label[for], select, button, .pointer {
@@ -133,6 +136,12 @@ a[href], input[type='submit'], input[type='image'], label[for], select, button, 
     .bio {
         max-width: 500px;
     }
+
+    .avatarWrapper {
+        bottom: 0em;
+        right: 0em;
+    }
+
     .avatar {
         width: 180px;
         height: 180px;
@@ -185,26 +194,15 @@ a[href], input[type='submit'], input[type='image'], label[for], select, button, 
         transition: opacity 0.2s;
     }
 
-    .avatarWrapper {
+    /* .avatarWrapper {
         bottom: 0em;
         right: 0em;
-    }
+    } */
 
     header {
         display: block;
     }
 
-}
-
-@media (max-width: 1000px) {
-    header {
-        display: block;
-    }
-
-    .avatarWrapper {
-        position: absolute;
-        margin: 0 0 0 0px;
-    }
 }
 
 @media (min-width: 1220px) {
@@ -295,6 +293,7 @@ a, u {
 
 .full {
 	background-color: var(--backColour);
+    transition: background-color 0.2s;
 }
 
 .sidebar {
@@ -312,13 +311,33 @@ a, u {
 
 header {
     position: relative;
-    display: flex;
+    display: block;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
+#themeToggle {
+    position: absolute;
+    top: 0em;
+    right: 0em;
+    /* background-color: var(--itemColour); */
+    padding: 0.5em;
+    color: var(--fadedTextColour);
+    cursor: pointer;
+    transition: background-color 0.5s, color 0.1s;
+    border-radius: 1em;
+}
+
+#themeToggle:hover {
+    color: var(--textColour);
+    background-color: var(--fadedTextColour);
+}
+
+
 .avatarWrapper {
     max-width: 500px;
+    position: absolute;
+    margin: 0 0 0 0px;
 }
 
 .avatar {
@@ -330,13 +349,18 @@ header {
     /* float: right; */
 }
 
+.sidebarItem p {
+    font-weight: 1000;
+    text-align: center;
+    color: var(--fadedTextColour)
+}
+
 .selected {
     background-color: var(--selectedColour);
 }
 
-.sidebarItem p {
-    font-weight: 1000;
-    text-align: center;
+.selected p {
+    color: var(--textColour);
 }
 
 .section {
@@ -353,6 +377,7 @@ header {
 
 .item {
     background-color: var(--itemColour);
+    transition: background-color 0.2s 0.1s;
     border-radius: 0.75em;
     margin-bottom: 1em;
     display: inline-flex;

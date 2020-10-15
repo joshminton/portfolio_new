@@ -1,38 +1,45 @@
 // var themeIcons = document.querySelectorAll('.theme_icon')
 //
-// var changeCol = function() {
-// 	for (var i = 0; i < themeIcons.length; i++) {
-// 		themeIcons[i].classList.remove('selected');
-// 	}
-// 	this.classList.add('selected')
-// 	document.documentElement.setAttribute('data-theme', this.getAttribute('id'));
-// }
-//
-// for (var i = 0; i < themeIcons.length; i++) {
-// 	var icon = themeIcons[i];
-// 	icon.addEventListener('click', changeCol, false);
-// }
+
+var darkMode = false;
+
+var changeCol = function() {
+    if(darkMode){
+        document.documentElement.setAttribute('data-theme', 'light');
+        darkMode = false;
+    } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        darkMode = true;
+    }
+}
+
+
+document.querySelector('#themeToggle').addEventListener('click', changeCol, false);
 
 function setInitialTheme() {
 
 	if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
   		console.log('dark mode is enabled');
+        darkMode = true;
     	document.documentElement.setAttribute('data-theme', 'dark');
     	// document.querySelector('#dark').classList.add('selected');
 	} else {
   		console.log('dark mode is not enabled');
-    	document.documentElement.setAttribute('data-theme', 'colourful');
+        darkMode = false;
+    	document.documentElement.setAttribute('data-theme', 'light');
     	// document.querySelector('#colourful').classList.add('selected');
 	}
 
 	window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
   	if (e.matches) {
     	console.log('dark mode is enabled');
+        darkMode = true;
     	document.documentElement.setAttribute('data-theme', 'dark');
         // document.querySelector('#dark').classList.add('selected');
   	} else {
   		console.log('dark mode is not enabled');
-    	document.documentElement.setAttribute('data-theme', 'colourful');
+        darkMode = false;
+    	document.documentElement.setAttribute('data-theme', 'light');
         // document.querySelector('#colourful').classList.add('selected');
   	}
 	});
