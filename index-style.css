@@ -314,8 +314,8 @@ a, u {
     margin: 0.2em;
     border-radius: 10em;
     width: auto;
-    position: absolute;
-    display: block;
+    position: relative;
+    display: inline-block;
     left: 50%;
     transform: translateX(-50%);
     transition: background-color 0.1s, color 0.2s;
