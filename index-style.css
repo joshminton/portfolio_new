@@ -404,7 +404,7 @@ header {
 
 #code .item .imageWrapper {
     margin-left: 1.5em;
-    background-color: #D6D6D6;
+    /* background-color: #D6D6D6; */
     width: 30%;
     /* flex-grow: 1; */
     border-radius: 0.75em;
