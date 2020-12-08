@@ -1,0 +1,377 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	/*font: inherit;*/
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+:root {
+    --headingColour:#C79751;
+
+	--backColour:#EDEDED;
+    --itemColour:#F7F7F7;
+    --selectedColour:#FFFFFF;
+    --textColour:#535353;
+    --fadedTextColour:#FDFDFD;
+}
+
+[data-theme="light"] {
+	--backColour:#EDEDED;
+    --itemColour:#F7F7F7;
+    --selectedColour:#FFFFFF;
+    --textColour:#535353;
+    --fadedTextColour:#B9B8B8;
+}
+
+[data-theme="dark"] {
+	--backColour:#313131;
+    --itemColour:#393939;
+    --selectedColour:#585858;
+    --textColour:#FDFDFD;
+    --fadedTextColour:#585858;
+}
+
+a[href], input[type='submit'], input[type='image'], label[for], select, button, .pointer {
+       cursor: pointer;
+}
+
+@media (max-width: 576px) {
+    .margin {
+        margin-left: 1.5em;
+        margin-right: 1.5em;
+    }
+
+    h1 {
+        font-size: 3em;
+    }
+
+    h2 {
+        font-size: 1em;
+    }
+
+    p {
+        font-size: 13pt;
+    }
+
+    .item p {
+        font-size: 11pt;
+    }
+
+    #code .item {
+        padding: 1em;
+    }
+
+    #film .item .description {
+        padding: 1.5em;
+    }
+
+    .full {
+        margin-top: 1.5em;
+    }
+
+    .section {
+        margin-bottom: 2.5em;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .avatarWrapper {
+        width: 25%;
+        right: 0em;
+        bottom: 0em;
+    }
+
+    .avatar {
+        width: 100%;
+    }
+
+    #code .item .imageWrapper {
+        background-size:cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+}
+
+@media (min-width: 576px) {
+    .bio {
+        max-width: 500px;
+    }
+
+    .avatarWrapper {
+        bottom: 0em;
+        right: 0em;
+    }
+
+    .avatar {
+        width: 180px;
+        height: 180px;
+    }
+
+    #code .item .imageWrapper {
+        background-size:contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+}
+
+@media (min-width: 576px) and (max-width: 1220px) {
+    .margin {
+        margin-left: 14%;
+        margin-right: 14%;
+    }
+
+    h1 {
+        font-size: 5em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    p {
+        font-size: 16pt;
+    }
+
+    .item p{
+        font-size: 14pt;
+    }
+
+    #code .item {
+        padding: 1.5em;
+    }
+
+    #film .item .description {
+        padding: 2em;
+    }
+
+    .full {
+        margin-top: 3em;
+    }
+
+    .sidebar {
+        left: 3.5%;
+    }
+
+    .section {
+        margin-bottom: 6em;
+    }
+
+    .section {
+        transition: opacity 0.2s;
+    }
+
+    /* .avatarWrapper {
+        bottom: 0em;
+        right: 0em;
+    } */
+
+    header {
+        display: block;
+    }
+
+}
+
+@media (min-width: 1220px) {
+    .margin {
+        margin-left: 22%;
+        margin-right: 22%;
+    }
+
+    h1 {
+        font-size: 5em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    p {
+        font-size: 16pt;
+    }
+
+    .item p{
+        font-size: 14pt;
+    }
+
+    #code .item {
+        padding: 1.5em;
+    }
+
+    #film .item .description {
+        padding: 2em;
+    }
+
+    .full {
+        margin-top: 3em;
+    }
+
+    .sidebar {
+        left: 7%;
+    }
+
+    .section {
+        margin-bottom: 6em;
+    }
+
+    .section {
+        transition: opacity 0.2s;
+    }
+
+    .bio {
+        max-width: 500px;
+    }
+}
+
+h1 {
+    font-family: Raleway;
+    font-weight: 800;
+	margin-bottom: 0.2em;
+    color: var(--headingColour);
+}
+
+h2 {
+    font-family: Raleway;
+    font-weight: 600;
+	margin-bottom: 0.2em;
+    color: var(--headingColour);
+}
+
+p {
+    font-family: Karla;
+    color: var(--textColour);
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    line-height: 120%;
+    margin-bottom: 1em;
+}
+
+.bold {
+	font-weight: 700;
+}
+
+.underlined {
+	text-decoration: underline;
+}
+
+a, u {
+    text-decoration: none;
+    color: inherit;
+}
+
+.full {
+	background-color: var(--backColour);
+    transition: background-color 0.2s;
+}
+
+.sidebar {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+}
+
+.sidebarItem {
+    padding: 0.5em;
+    margin: 0.2em;
+    border-radius: 10em;
+}
+
+header {
+    position: relative;
+    display: block;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 4em;
+}
+
+#themeToggle {
+    position: absolute;
+    top: 0em;
+    right: 0em;
+    /* background-color: var(--itemColour); */
+    padding: 0.5em;
+    color: var(--fadedTextColour);
+    cursor: pointer;
+    transition: background-color 0.5s, color 0.1s;
+    border-radius: 1em;
+}
+
+#themeToggle:hover {
+    color: var(--textColour);
+    background-color: var(--fadedTextColour);
+}
+
+.project {
+    margin-bottom: 4em;
+}
+
+
+.image {
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+.caption {
+    text-align: center;
+    font-style: italic;
+}
+
+footer {
+    padding-bottom: 2em;
+    text-align: center;
+}
+
+
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+/*.material-icons.white { color: white; }*/
