@@ -361,6 +361,7 @@ header {
 .caption {
     text-align: center;
     font-style: italic;
+    margin-bottom: 1.5em;
 }
 
 footer {
