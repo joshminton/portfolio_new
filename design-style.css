@@ -283,6 +283,21 @@ h2 {
     color: var(--headingColour);
 }
 
+h3 {
+    font-family: Raleway;
+    font-weight: 600;
+    font-size: 2em;
+	margin-bottom: 1em;
+    color: var(--textColour);
+    opacity: 0.25;
+    transition: opacity 0.1s;
+    display: inline-block;
+}
+
+h3:hover{
+    opacity: 1;
+}
+
 p {
     font-family: Karla;
     color: var(--textColour);
@@ -336,16 +351,17 @@ header {
     top: 0em;
     right: 0em;
     /* background-color: var(--itemColour); */
-    padding: 0.5em;
+    /* padding: 0.5em; */
     color: var(--fadedTextColour);
     cursor: pointer;
     transition: background-color 0.5s, color 0.1s;
-    border-radius: 1em;
+    font-size: 2em;
+    /* border-radius: 1em; */
 }
 
 #themeToggle:hover {
     color: var(--textColour);
-    background-color: var(--fadedTextColour);
+    /* background-color: var(--fadedTextColour); */
 }
 
 .project {
@@ -365,8 +381,14 @@ header {
 }
 
 footer {
-    padding-bottom: 2em;
+    padding: 3em;
     text-align: center;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin-left: 0;
+}
+
+footer p {
+    margin: 0;
 }
 
 

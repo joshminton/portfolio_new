@@ -81,8 +81,8 @@ a[href], input[type='submit'], input[type='image'], label[for], select, button, 
 
 @media (max-width: 576px) {
     .margin {
-        margin-left: 1.5em;
-        margin-right: 1.5em;
+        padding-left: 1.5em;
+        padding-right: 1.5em;
     }
 
     h1 {
@@ -357,16 +357,17 @@ header {
     top: 0em;
     right: 0em;
     /* background-color: var(--itemColour); */
-    padding: 0.5em;
+    /* padding: 0.5em; */
+    font-size: 2em;
     color: var(--fadedTextColour);
     cursor: pointer;
     transition: background-color 0.5s, color 0.1s;
-    border-radius: 1em;
+    /* border-radius: 1em; */
 }
 
 #themeToggle:hover {
     color: var(--textColour);
-    background-color: var(--fadedTextColour);
+    /* background-color: var(--fadedTextColour); */
 }
 
 
@@ -491,8 +492,10 @@ iframe {
 }
 
 footer {
-    padding-bottom: 2em;
+    padding: 3em;
     text-align: center;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin-left: 0;
 }
 
 #design .item {
