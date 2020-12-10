@@ -93,6 +93,15 @@ a[href], input[type='submit'], input[type='image'], label[for], select, button, 
         font-size: 1.5em;
     }
 
+    h3 {
+        font-size: 1.5em;
+        margin-bottom: 0.5em;
+    }
+
+    #themeToggle {
+        font-size: 1.5em;
+    }
+
     p {
         font-size: 13pt;
     }
@@ -111,6 +120,10 @@ a[href], input[type='submit'], input[type='image'], label[for], select, button, 
 
     .full {
         margin-top: 1.5em;
+    }
+
+    header {
+        margin-bottom: 2em;
     }
 
     .section {
@@ -139,6 +152,20 @@ a[href], input[type='submit'], input[type='image'], label[for], select, button, 
 }
 
 @media (min-width: 576px) {
+
+    h3 {
+        font-size: 2em;
+        margin-bottom: 1em;
+    }
+
+    header {
+        margin-bottom: 4em;
+    }
+
+    #themeToggle {
+        font-size: 2em;
+    }
+
     .bio {
         max-width: 500px;
     }
@@ -286,8 +313,6 @@ h2 {
 h3 {
     font-family: Raleway;
     font-weight: 600;
-    font-size: 2em;
-	margin-bottom: 1em;
     color: var(--textColour);
     opacity: 0.25;
     transition: opacity 0.1s;
@@ -343,7 +368,6 @@ header {
     display: block;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-bottom: 4em;
 }
 
 #themeToggle {
@@ -355,7 +379,7 @@ header {
     color: var(--fadedTextColour);
     cursor: pointer;
     transition: background-color 0.5s, color 0.1s;
-    font-size: 2em;
+    /* font-size: 2em; */
     /* border-radius: 1em; */
 }
 
