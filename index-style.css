@@ -93,6 +93,10 @@ a[href], input[type='submit'], input[type='image'], label[for], select, button, 
         font-size: 1em;
     }
 
+    h6 {
+        font-size: 15pt;
+    }
+
     p {
         font-size: 13pt;
     }
@@ -150,8 +154,8 @@ a[href], input[type='submit'], input[type='image'], label[for], select, button, 
 
     .avatar {
         width: 180px;
-        height: 180px;
-    }
+/*        height: 180px;
+*/    }
 
     #code .item .imageWrapper {
         background-size:contain;
@@ -173,6 +177,10 @@ a[href], input[type='submit'], input[type='image'], label[for], select, button, 
 
     h2 {
         font-size: 1.8em;
+    }
+
+    h6 {
+        font-size: 20pt;
     }
 
     p {
@@ -232,6 +240,10 @@ a[href], input[type='submit'], input[type='image'], label[for], select, button, 
         font-size: 1.8em;
     }
 
+    h6 {
+        font-size: 20pt;
+    }
+
     p {
         font-size: 16pt;
     }
@@ -269,6 +281,10 @@ a[href], input[type='submit'], input[type='image'], label[for], select, button, 
     }
 }
 
+html {
+    overscroll-behavior: none;
+}
+
 h1 {
     font-family: Raleway;
     font-weight: 800;
@@ -281,6 +297,16 @@ h2 {
     font-weight: 600;
 	margin-bottom: 0.2em;
     color: var(--headingColour);
+}
+
+h6 {
+    font-family: Karla;
+    font-weight: 600;
+    color: var(--textColour);
+    opacity: 0.75;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    line-height: 120%;
 }
 
 p {
