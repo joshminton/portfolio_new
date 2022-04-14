@@ -57,7 +57,7 @@ function setAge() {
 	span.innerHTML = age;
 }
 
-setAge();
+// setAge();
 
 function getContentfulAssetURL(data, id){
     for (var i = 0; i < data.includes.Asset.length; i++) {
