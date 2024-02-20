@@ -1,12 +1,12 @@
 // var themeIcons = document.querySelectorAll('.theme_icon')
 //
 
-var darkMode = false;
+var darkMode = true;
 
 var changeCol = function() {
     if(darkMode){
         document.documentElement.setAttribute('data-theme', 'light');
-        darkMode = false;
+        darkMode = true;
     } else {
         document.documentElement.setAttribute('data-theme', 'dark');
         darkMode = true;
@@ -25,7 +25,7 @@ function setInitialTheme() {
     	// document.querySelector('#dark').classList.add('selected');
 	} else {
   		console.log('dark mode is not enabled');
-        darkMode = false;
+        darkMode = true;
     	document.documentElement.setAttribute('data-theme', 'light');
     	// document.querySelector('#colourful').classList.add('selected');
 	}
@@ -38,7 +38,7 @@ function setInitialTheme() {
         // document.querySelector('#dark').classList.add('selected');
   	} else {
   		console.log('dark mode is not enabled');
-        darkMode = false;
+        darkMode = true;
     	document.documentElement.setAttribute('data-theme', 'light');
         // document.querySelector('#colourful').classList.add('selected');
   	}
@@ -108,17 +108,19 @@ $(document).ready(function() {
     function setActiveSection() {
         console.log($(window).width())
         if($(window).width() > 576){
-            var halfWay = $(window).height() / 2;
+            var thirdWay = ($(window).height() / 3) * 2;
             var scrollPos = $(window).scrollTop();
             // var notSet = true;
             $('.section').each(function(i){
-                var offT = $(this).offset().top;
-                if((offT-scrollPos) <= halfWay) {
-                    $('.selected').removeClass('selected')
-                    $('.inView').removeClass('inView')
+                if(!isElementMostlyOffscreen(this)) {
+                    // $('.selected').removeClass('selected')
+                    // $('.inView').removeClass('inView')
                     $('.sidebar div').eq(i).addClass('selected')
                     $('.section').eq(i).addClass('inView')
                     // notSet = false;
+                } else {
+                    $('.selected').eq(i).removeClass('selected')
+                    $('.inView').eq(i).removeClass('inView')
                 }
             })
             // if(notSet){
@@ -132,5 +134,24 @@ $(document).ready(function() {
         setActiveSection();
     });
 
-    setActiveSection();
+    // setActiveSection();
 });
+
+function isElementMostlyOffscreen(element) {
+  const rect = element.getBoundingClientRect();
+  const viewportHeight = window.innerHeight;
+
+  // Calculate the visible area for both top and bottom
+  const visibleTop = Math.max(0, rect.top);
+  const visibleBottom = Math.min(viewportHeight, rect.bottom);
+  const visibleHeight = visibleBottom - visibleTop;
+
+  // Check if the top is more than two-thirds down
+  const isTopMostlyOffscreen = visibleTop > (2 / 3) * viewportHeight;
+
+  // Check if the bottom is less than a third from the top
+  const isBottomMostlyOffscreen = visibleBottom < (1 / 3) * viewportHeight;
+
+  return isTopMostlyOffscreen || isBottomMostlyOffscreen;
+}
+
