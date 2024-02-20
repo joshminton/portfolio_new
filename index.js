@@ -106,26 +106,28 @@ function getContentfulAssetURL(data, id){
 $(document).ready(function() {
 
     function setActiveSection() {
-        console.log($(window).width())
+        console.log($(window).width());
+        var scrollPos = $(window).scrollTop();
         if($(window).width() > 576){
-            var thirdWay = ($(window).height() / 3) * 2;
-            var scrollPos = $(window).scrollTop();
-            // var notSet = true;
-            $('.section').each(function(i){
-                if(!isElementMostlyOffscreen(this)) {
-                    // $('.selected').removeClass('selected')
-                    // $('.inView').removeClass('inView')
-                    $('.sidebar div').eq(i).addClass('selected')
-                    $('.section').eq(i).addClass('inView')
-                    // notSet = false;
-                } else {
-                    $('.selected').eq(i).removeClass('selected')
-                    $('.inView').eq(i).removeClass('inView')
-                }
-            })
-            // if(notSet){
-            //     $('.selected').removeClass('selected')
-            // }
+            if(scrollPos > 0){
+                var thirdWay = ($(window).height() / 3) * 2;
+                // var notSet = true;
+                $('.section').each(function(i){
+                    if(!isElementMostlyOffscreen(this)) {
+                        // $('.selected').removeClass('selected')
+                        // $('.inView').removeClass('inView')
+                        $('.sidebar div').eq(i).addClass('selected')
+                        $('.section').eq(i).addClass('inView')
+                        // notSet = false;
+                    } else {
+                        $('.selected').eq(i).removeClass('selected')
+                        $('.inView').eq(i).removeClass('inView')
+                    }
+                })
+                // if(notSet){
+                //     $('.selected').removeClass('selected')
+                // }
+            }
         } else {
             $('.section').addClass('inView')
         }
@@ -134,7 +136,7 @@ $(document).ready(function() {
         setActiveSection();
     });
 
-    // setActiveSection();
+    setActiveSection();
 });
 
 function isElementMostlyOffscreen(element) {
