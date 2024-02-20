@@ -549,6 +549,9 @@ footer {
     margin-bottom: 0;
 }
 
+.bio p {
+    margin-bottom: 0.5em;
+}
 
 
 .material-icons.md-18 { font-size: 18px; }
