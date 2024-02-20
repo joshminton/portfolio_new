@@ -6,7 +6,7 @@ var darkMode = true;
 var changeCol = function() {
     if(darkMode){
         document.documentElement.setAttribute('data-theme', 'light');
-        darkMode = true;
+        darkMode = false;
     } else {
         document.documentElement.setAttribute('data-theme', 'dark');
         darkMode = true;
@@ -26,7 +26,7 @@ function setInitialTheme() {
 	} else {
   		console.log('dark mode is not enabled');
         darkMode = true;
-    	document.documentElement.setAttribute('data-theme', 'light');
+    	document.documentElement.setAttribute('data-theme', 'dark');
     	// document.querySelector('#colourful').classList.add('selected');
 	}
 
@@ -39,7 +39,7 @@ function setInitialTheme() {
   	} else {
   		console.log('dark mode is not enabled');
         darkMode = true;
-    	document.documentElement.setAttribute('data-theme', 'light');
+    	document.documentElement.setAttribute('data-theme', 'dark');
         // document.querySelector('#colourful').classList.add('selected');
   	}
 	});
